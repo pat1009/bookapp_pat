@@ -11,8 +11,8 @@ warnings.filterwarnings('ignore')
 st.title('Book Recommendation App')
 
 #---load dataset
-data = pd.read_csv('C:/Users/sivendhu/Desktop/DataAnalysis/sem2/course1040/assignment1/book_final_data.csv')
-top_n = json.load(open(r"C:/Users/sivendhu/Desktop/DataAnalysis/sem2/course1040/assignment1/top_n.jsn","r"))
+data = pd.read_csv('book_final_data.csv')
+top_n = json.load(open(r"top_n.jsn","r"))
 
 #create sidebar
 st.sidebar.title("PLEASE SELECT YOUR USER PROFILE")
