@@ -30,7 +30,8 @@ uid = int(user_id)
 def get_history(userid):
 
         ratings = data.loc[data['user_id'] == userid]
-        ratings = ratings[['Book_title', 'Rating']]
+        ratings = ratings[['book_title', 'rating']]
+        ratings.rename(columns={'book_title': 'Book_title', 'rating': 'Rating'}, inplace=True)
         if ratings.empty:
             print('Sorry your recommendation bucket is empty as you did not rate any books yet')
         else:
