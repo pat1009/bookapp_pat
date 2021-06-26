@@ -30,12 +30,12 @@ uid = int(user_id)
 def get_history(userid):
 
         ratings = data.loc[data['user_id'] == userid]
-        ratings = ratings[['book_title', 'rating']]
+        ratings = ratings[['Book_title', 'Rating']]
         if ratings.empty:
             print('Sorry your recommendation bucket is empty as you did not rate any books yet')
         else:
-            df_reset=ratings.set_index('book_title')
-            df_reset1=df_reset.sort_values(by='rating', ascending=False)
+            df_reset=ratings.set_index('Book_title')
+            df_reset1=df_reset.sort_values(by='Rating', ascending=False)
             return(df_reset1)
         
 
@@ -49,9 +49,9 @@ def get_reco_list(userid):
             reading_list[title] = rating
             
         example_reading_list = reading_list.items()
-        df = pd.DataFrame([(k,v) for k, v in example_reading_list], columns = ["book_name","rating"])
-        df_set=df.set_index('book_name')
-        df_set1=df_set.sort_values(by='rating', ascending=False).head(5)
+        df = pd.DataFrame([(k,v) for k, v in example_reading_list], columns = ["Book_name","Rating"])
+        df_set=df.set_index('Book_name')
+        df_set1=df_set.sort_values(by='Rating', ascending=False).head(5)
         
         return(df_set1)
     
